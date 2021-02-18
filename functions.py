@@ -1263,7 +1263,7 @@ async def create_secondary(guild, primary, creator, private=False):
             if showto_r:
                 overwrites[showto_r] = discord.PermissionOverwrite(read_messages=True)
         tc = await guild.create_text_channel(
-            utils.nice_cname(settings['text_channel_name']) if 'text_channel_name' in settings else "voice context",
+            utils.nice_cname(settings['text_channel_name']) if 'text_channel_name' in settings else name,
             category=primary.category,
             overwrites=overwrites,
             topic=(":eye: This channel is only visible to members of your voice channel, "
